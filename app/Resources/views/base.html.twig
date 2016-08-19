@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from steelcoders.com/alpha/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Aug 2016 09:53:47 GMT -->
+<head>
+        
+        <!-- Title -->
+        <title>{% block title %}Alpha | Responsive Admin Dashboard Template{% endblock %}</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta charset="UTF-8">
+        <meta name="description" content="Responsive Admin Dashboard Template" />
+        <meta name="keywords" content="admin,dashboard" />
+        <meta name="author" content="Steelcoders" />
+        
+        <!-- Styles -->     
+
+            
+        <!-- Theme Styles -->
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('admin/plugins/materialize/css/materialize.min.css') }}">
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('admin/plugins/material-preloader/css/materialPreloader.min.css') }}"> 
+            <link rel="stylesheet" href="{{ asset('admin/plugins/datatables/css/jquery.dataTables.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('admin/css/alpha.min.css') }}">
+        {% endblock %}
+        
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+        <div class="loader">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block main %}{% endblock %}
+        <!-- Javascripts -->
+        {% block javascripts %}
+            <script src="{{ asset('admin/plugins/jquery/jquery-2.2.0.min.js') }}"></script>
+            <script src="{{ asset('admin/plugins/materialize/js/materialize.min.js') }}"></script>
+            <script src="{{ asset('admin/plugins/material-preloader/js/materialPreloader.min.js') }}"></script>
+            <script src="{{ asset('admin/plugins/jquery-blockui/jquery.blockui.js') }}"></script>
+            <script src="{{ asset('admin/js/alpha.min.js') }}"></script>
+        {% endblock %}
+        
+    </body>
+
+<!-- Mirrored from steelcoders.com/alpha/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Aug 2016 09:53:47 GMT -->
+</html>

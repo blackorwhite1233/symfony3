@@ -1,0 +1,18 @@
+{% extends 'CmsBundle:Admin:layout.html.twig' %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <h2>
+                <a href="{{ path('blog_post', { slug: post.slug }) }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+
+            {{ post.summary }}
+        </article>
+    {% else %}
+        <div class="well">{{ 'post.no_posts_found'|trans }}</div>
+    {% endfor %}
+
+{% endblock %}

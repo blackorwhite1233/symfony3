@@ -1,0 +1,68 @@
+{% extends 'CmsBundle:Admin:layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block content %}
+    <main>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="page-title">Data Tables</div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Basic</span>
+                                <table id="example" class="display responsive-table datatable-example">
+                                    <thead>
+                                        <tr>
+                                            <th>{{ 'label.title'|trans }}</th>
+                                            <th>{{ 'label.alias'|trans }}</th>
+                                            <th>{{ 'label.published_at'|trans }}</th>
+                                            <th>{{ 'label.actions'|trans }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>{{ 'label.title'|trans }}</th>
+                                            <th>{{ 'label.alias'|trans }}</th>
+                                            <th>{{ 'label.published_at'|trans }}</th>
+                                            <th>{{ 'label.actions'|trans }}</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    {% for page in pages %}
+                                        <tr>
+                                            <td>{{ page.title }}</td>
+                                            <td>{{ page.alias }}</td>
+                                            <td>{% if page.created %}{{ page.created }}{% endif %}</td>
+                                            <td>
+                                                <div class="item-actions">
+                                                    <a title="{{ 'action.show'|trans }}" href="{{ path('admin_page_show', { id: page.pageID }) }}" >
+                                                        <i class=""></i>
+                                                    </a>
+
+                                                        <a href="{{ path('admin_page_edit', { id: page.pageID }) }}" class="btn btn-sm btn-primary">
+                                                            <i class="fa fa-edit"></i> {{ 'action.edit'|trans }}
+                                                        </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('admin/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/js/pages/table-data.js') }}"></script>
+{% endblock %}
